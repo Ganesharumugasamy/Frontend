@@ -1,0 +1,98 @@
+.splitL {
+  height: 100vh;
+  width: 20%;
+  position: relative;
+  z-index: 1;
+  padding-top: 3px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .splitR {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  /* Control the left side */
+  .left {
+    left: 0;
+    background-color: lightgrey;
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: darkcyan ;
+  }
+  
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .centeredR { 
+    width:80%; 
+    height:700px;
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  :host ::ng-deep [data-n-id='1'] rect {
+    fill: #750000;
+}
+.zoom-button {
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  
+  .box {
+    border: 3px solid #666;
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    cursor: move;
+  }
+
+  .content{
+    width: 100%;
+    padding: 3% 0%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+  }
+
+  .card-selected{
+    background-color: #039BE5;
+    color: white;
+  }

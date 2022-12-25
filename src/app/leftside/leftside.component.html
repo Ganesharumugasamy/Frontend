@@ -1,0 +1,35 @@
+<div class="splitL left">
+  <div style="margin:auto; width: 100%; margin-top: 30px;">
+    <form class="example-form" >
+    <mat-form-field class="example-full-width" style="width: 30%">
+      <mat-chip-list #chipList>
+        <mat-chip style="margin-top:0.4em;" *ngFor="let option of searchOpt" (removed)="removeOption(option)">
+          <span>{{option.Name}}</span>
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip> 
+        <input #autocompleteInput type="text" placeholder="Enter title" aria-label="Number"  
+         matInput [formControl]="myControl"  [matAutocomplete]="auto"> 
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of autoCompleteList" [value]="option" (onSelectionChange)="filterPostList($event)">
+            {{option.Name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-chip-list>
+    </mat-form-field>
+    </form>
+    
+    <select (onSelectedOption)="onSelectedOption($event)">
+      <h2>Jane Flex</h2>
+      <p>leftside works!</p>
+        <div *ngFor="let post of posts" class="group">
+          <p><b>Id :</b>{{posts.Id}}</p>
+          <p><b>Name :</b> {{posts.Name}}</p>
+          <p><b>Designation: </b>{{posts.Designation}}</p>
+          <p><b>TEAM: </b>{{posts.Team}}</p>
+          <p><b>ManagerId: </b>{{posts.ManagerId}}</p>
+        </div>
+    </select>
+  </div>
+</div>
+
+  
