@@ -14,7 +14,7 @@ import { map, startWith } from 'rxjs/operators';
 export class AppComponent {
   title = 'villagetalkies';
   posts: any;
-  isReset:boolean;
+  // isReset:boolean;
   myControl = new FormControl();
   // options: any 
   filteredOptions: Observable<any[]>;
@@ -35,7 +35,7 @@ export class AppComponent {
   }
 
   displayChart(id) {
-    this.isReset = true
+    // this.isReset = true
     const tree = document.getElementById('tree');
     if (tree) {
       this.chart = new OrgChart(tree, {
@@ -66,7 +66,7 @@ export class AppComponent {
   }
 
   initialise(isinitialdada) {
-    this.isReset = false
+    // this.isReset = false
     if(this.chart) this.chart.destroy()
     if (isinitialdada == true) {
     this.service.getPosts().subscribe(response => {
