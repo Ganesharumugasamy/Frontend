@@ -9,8 +9,6 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LeftsideComponent } from './leftside/leftside.component';
-import { RightsideComponent } from './rightside/rightside.component';
 import { BackendService } from './backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
@@ -21,9 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LeftsideComponent,
-    RightsideComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

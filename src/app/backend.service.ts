@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 
 
 export class BackendService {
-  searchOption:any=[]
-  public postsData:any
+  // searchOption:any=[]
+  // public postsData:any
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -30,17 +30,4 @@ export class BackendService {
   return this.httpClient.put<any>(`${this.url}/${data.id}`, data, this.httpOptions)
   }
 
-  filteredListOptions() {
-    let posts = this.postsData;
-        let filteredPostsList : any = [];
-        for (let post of posts) {
-            for (let options of this.searchOption) {
-                if (options['Name'] === post.Name) {
-                  filteredPostsList.push(post);
-                }
-            }
-        }
-        console.log(filteredPostsList);
-        return filteredPostsList;
-  }  
 }

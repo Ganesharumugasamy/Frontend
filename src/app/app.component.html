@@ -1,33 +1,23 @@
-<!-- <app-leftside></app-leftside> -->
-<!-- <app-rightside></app-rightside> -->
-
-<div class="content">
+<div class="content" >
   <div class="splitL left">
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Search</mat-label>
-        <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="selectedEmp">
-        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-            {{option.Name}}
-          </mat-option>
-        </mat-autocomplete>
+        <input type="text" matInput [formControl]="myControl">
       </mat-form-field> 
     </form>
-    <mat-card *ngIf="selectedEmp" class="card-selected">
-      <mat-card-content>
-        <h5><Span>Id:</Span> {{selectedEmp.id}} </h5>
-        <h5><Span>Name:</Span> {{selectedEmp.Name}} </h5>
-        <h5><Span>Designation:</Span> {{selectedEmp.Designation}} </h5>
-        <h5><Span>Team:</Span> {{selectedEmp.Team}} </h5>
-        <h5><Span>Manager:</Span> {{selectedEmp.Manager}} </h5>
-        <h5><Span>Manager Id:</Span> {{selectedEmp.ManagerId}} </h5>
+    <mat-card *ngFor="let emp of filteredOptions | async" class="card-selected" (click)="displayChart(emp.id)">
+        <mat-card-content>
+        <h5><Span>Name:</Span> {{emp.Name}} </h5>
+        <h5><Span>Designation:</Span> {{emp.Designation}} </h5>
       </mat-card-content>
     </mat-card>
   </div>
   
   <div class="splitR right">
-    <h4>Right Side works</h4>
+    <h4>
+      <button *ngIf="isReset" class="btn btn-success" (click)="initialise()">Reset</button>
+    </h4>
     <div id="tree"></div>
   </div>
   
