@@ -24,7 +24,7 @@ export class AppComponent {
 
   ngOnInit(): void {
 
-    this.initialise();
+    this.initialise(true);
 
   }
 
@@ -65,10 +65,10 @@ export class AppComponent {
     }
   }
 
-  initialise()
-  {
+  initialise(isinitialdada) {
     this.isReset = false
     if(this.chart) this.chart.destroy()
+    if (isinitialdada == true) {
     this.service.getPosts().subscribe(response => {
       this.posts = response;
       // this.options = response;
@@ -85,6 +85,15 @@ export class AppComponent {
         }),
       );
     });
+  }
+  else {
+    setTimeout(() => {
+    this.posts.forEach(person => {
+      var imeg = new String(`../assets/${person.id}.jpg`)
+      this.chart.addNode({ id: person.id, pid: person.ManagerId, name: person.Name, title: person.Designation, img: imeg });
+    })
+  },2000)
+  }
 
     const tree = document.getElementById('tree');
     if (tree) {
@@ -114,7 +123,7 @@ export class AppComponent {
               // });
             }
           })
-        }, 5000)
+        }, 2000)
       })
 
     }
