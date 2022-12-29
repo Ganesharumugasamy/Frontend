@@ -110,8 +110,8 @@ export class AppComponent {
                   break;
                 }
               }
-              this.service.addData(ele).subscribe(newData => {
-              });
+              // this.service.addData(ele).subscribe(newData => {
+              // });
             }
           })
         }, 5000)

@@ -17,7 +17,7 @@ export class BackendService {
       Authorization: 'my-auth-token'
     })
   };
-  private url = 'http://localhost:3000/users';
+  private url = 'https://my-json-server.typicode.com/Ganesharumugasamy/Backend/users/';
 
   constructor(private httpClient: HttpClient) { }
   
